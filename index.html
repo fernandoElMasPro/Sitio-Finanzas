@@ -3,27 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aprende Mejor — Métodos de Estudio</title>
-  <meta name="description" content="Guía práctica de métodos de estudio comprobados: técnicas, planificación y herramientas para estudiar mejor.">
-  <h1>Prueba de git</h1>
+  <title>EVOLVE — Avances Tecnológicos de la Humanidad</title>
+  <meta name="description" content="Un recorrido interactivo por los hitos tecnológicos que transformaron a la humanidad, desde la rueda hasta la inteligencia artificial.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+  <!-- Fondo animado de partículas -->
+  <canvas id="particle-canvas"></canvas>
 
   <!-- ===== HEADER / MENÚ ===== -->
   <header class="site-header" id="header">
     <div class="header-inner">
-      <a href="#inicio" class="logo">Aprende<span class="logo-accent">Mejor</span></a>
+      <a href="#inicio" class="logo">EVOLVE<span class="logo-dot">.</span></a>
 
       <nav class="main-nav" id="main-nav">
         <ul>
           <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#metodos">Métodos</a></li>
-          <li><a href="#planificacion">Planificación</a></li>
-          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#linea-tiempo">Línea de tiempo</a></li>
+          <li><a href="#fronteras">Fronteras</a></li>
+          <li><a href="#impacto">Impacto</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -37,97 +39,144 @@
   <!-- ===== HERO ===== -->
   <section class="hero" id="inicio">
     <div class="hero-inner">
-      <p class="hero-eyebrow">Técnicas respaldadas por evidencia</p>
-      <h1 class="hero-title">Estudiar no es leer más veces. <span class="underline-mark">Es leer distinto.</span></h1>
-      <p class="hero-lead">Reunimos los métodos de estudio con más respaldo científico —repetición espaciada, recuperación activa, Pomodoro y más— explicados para que los apliques desde hoy.</p>
+      <p class="hero-eyebrow">// DE LA RUEDA A LA INTELIGENCIA ARTIFICIAL</p>
+      <h1 class="hero-title">La historia humana es la historia de <span class="glow-text">sus máquinas</span>.</h1>
+      <p class="hero-lead">Explora los avances tecnológicos que redefinieron lo que significa ser humano — cómo nos comunicamos, cómo curamos, cómo viajamos y cómo pensamos.</p>
       <div class="hero-actions">
-        <a href="#metodos" class="btn btn-primary">Ver los métodos</a>
-        <a href="#planificacion" class="btn btn-ghost">Arma tu plan</a>
+        <a href="#linea-tiempo" class="btn btn-primary">Explorar la línea de tiempo</a>
+        <a href="#fronteras" class="btn btn-ghost">Ver el futuro</a>
       </div>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="note-card note-1">Repetición<br>espaciada</div>
-      <div class="note-card note-2">Recuerda<br>antes de releer</div>
-      <div class="note-card note-3">25 min<br>enfoque total</div>
-      <div class="hero-scribble"></div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span></span>
+      <p>scroll</p>
     </div>
   </section>
 
-  <!-- ===== MÉTODOS ===== -->
-  <section class="metodos" id="metodos">
+  <!-- ===== LÍNEA DE TIEMPO ===== -->
+  <section class="linea-tiempo" id="linea-tiempo">
     <div class="section-inner">
-      <h2 class="section-title">Cuatro métodos, un mismo principio: <br>tu cerebro aprende trabajando, no mirando.</h2>
+      <p class="section-eyebrow">// HITOS</p>
+      <h2 class="section-title">Cada avance abrió la puerta al siguiente</h2>
 
-      <div class="metodos-grid">
-        <article class="metodo-card metodo-coral">
-          <h3>Repetición espaciada</h3>
-          <p>Revisa el mismo contenido en intervalos cada vez más largos. Cada repaso justo antes de olvidar refuerza la memoria a largo plazo mucho más que estudiar todo de una sentada.</p>
-          <span class="metodo-tag">Memoria a largo plazo</span>
+      <div class="timeline" id="timeline">
+        <div class="timeline-line"></div>
+
+        <article class="timeline-item" data-year="~3500 a.C.">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">~3500 a.C.</span>
+            <h3>La rueda</h3>
+            <p class="timeline-summary">Transformó el transporte, la agricultura y la alfarería.</p>
+            <p class="timeline-detail">Una de las invenciones mecánicas más antiguas, permitió mover cargas pesadas con mucho menos esfuerzo y sentó las bases de la ingeniería mecánica que usamos hasta hoy.</p>
+          </div>
         </article>
 
-        <article class="metodo-card metodo-mango">
-          <h3>Recuperación activa</h3>
-          <p>Cierra el libro e intenta recordar lo que acabas de leer, sin mirar. El esfuerzo de "sacar" la información de tu memoria la fija mucho mejor que releerla.</p>
-          <span class="metodo-tag">Autoevaluación</span>
+        <article class="timeline-item" data-year="1440">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">1440</span>
+            <h3>Imprenta de Gutenberg</h3>
+            <p class="timeline-summary">Democratizó el acceso al conocimiento escrito.</p>
+            <p class="timeline-detail">Antes, copiar un libro tomaba meses a mano. La imprenta de tipos móviles permitió reproducir textos en masa, acelerando la alfabetización y la circulación de ideas por toda Europa.</p>
+          </div>
         </article>
 
-        <article class="metodo-card metodo-menta">
-          <h3>Técnica Pomodoro</h3>
-          <p>25 minutos de enfoque total, 5 de descanso. Bloques cortos y sin interrupciones rinden más que sesiones largas donde la atención se diluye.</p>
-          <span class="metodo-tag">Gestión del tiempo</span>
+        <article class="timeline-item" data-year="1879">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">1879</span>
+            <h3>Bombilla eléctrica práctica</h3>
+            <p class="timeline-summary">Extendió el día productivo humano más allá del sol.</p>
+            <p class="timeline-detail">La electrificación de hogares y ciudades cambió los ritmos de vida, la industria y sentó las bases de casi toda la tecnología moderna que depende de la energía eléctrica.</p>
+          </div>
         </article>
 
-        <article class="metodo-card metodo-coral">
-          <h3>Elaboración</h3>
-          <p>Explica el tema con tus propias palabras, como si se lo enseñaras a alguien más. Si no puedes explicarlo simple, todavía no lo entiendes del todo.</p>
-          <span class="metodo-tag">Comprensión profunda</span>
+        <article class="timeline-item" data-year="1969">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">1969</span>
+            <h3>ARPANET, origen de internet</h3>
+            <p class="timeline-summary">La primera red que conectó computadoras a distancia.</p>
+            <p class="timeline-detail">Un proyecto de investigación conectó cuatro universidades en Estados Unidos. Décadas después, esa idea se convirtió en la red global que hoy conecta a miles de millones de personas.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item" data-year="2007">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2007</span>
+            <h3>El smartphone moderno</h3>
+            <p class="timeline-summary">Puso una computadora conectada en cada bolsillo.</p>
+            <p class="timeline-detail">Combinar teléfono, cámara, internet y pantalla táctil en un solo dispositivo cambió cómo trabajamos, socializamos y accedemos a la información en tiempo real.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item" data-year="2020s">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2020s</span>
+            <h3>IA generativa a gran escala</h3>
+            <p class="timeline-summary">Máquinas que escriben, dibujan y razonan con lenguaje natural.</p>
+            <p class="timeline-detail">Modelos de lenguaje e imagen entrenados con enormes cantidades de datos empezaron a asistir en tareas creativas, científicas y cotidianas, abriendo un nuevo capítulo en la relación humano-máquina.</p>
+          </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ===== PLANIFICACIÓN ===== -->
-  <section class="planificacion" id="planificacion">
-    <div class="section-inner planificacion-inner">
-      <div class="planificacion-texto">
-        <h2 class="section-title">Un método sin plan se olvida a la semana.</h2>
-        <p>Arma un calendario de repasos simple: estudia un tema, repásalo al día siguiente, luego a los 3 días, luego a la semana. Cada repaso puede durar la mitad que el anterior.</p>
-        <ul class="check-list">
-          <li>Define qué vas a estudiar y por cuánto tiempo, antes de empezar.</li>
-          <li>Alterna materias distintas en una misma sesión (intercalado).</li>
-          <li>Anota qué te costó recordar para repasarlo primero la próxima vez.</li>
-        </ul>
-      </div>
-      <div class="planificacion-visual" aria-hidden="true">
-        <div class="calendar-mock">
-          <div class="cal-day">Lun</div>
-          <div class="cal-day active">Mar</div>
-          <div class="cal-day">Mié</div>
-          <div class="cal-day active">Jue</div>
-          <div class="cal-day">Vie</div>
-          <div class="cal-day">Sáb</div>
-          <div class="cal-day active">Dom</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== RECURSOS ===== -->
-  <section class="recursos" id="recursos">
+  <!-- ===== FRONTERAS ACTUALES ===== -->
+  <section class="fronteras" id="fronteras">
     <div class="section-inner">
-      <h2 class="section-title">Recursos para empezar hoy</h2>
-      <div class="recursos-grid">
-        <div class="recurso-item">
-          <h3>Plantilla de repasos</h3>
-          <p>Una hoja de cálculo simple para programar tus repasos espaciados por materia.</p>
+      <p class="section-eyebrow">// AHORA MISMO</p>
+      <h2 class="section-title">Las fronteras que se están cruzando hoy</h2>
+
+      <div class="fronteras-grid">
+        <article class="frontera-card">
+          <div class="frontera-icon">◆</div>
+          <h3>Inteligencia artificial</h3>
+          <p>Sistemas capaces de aprender patrones y generar contenido, código y decisiones, cambiando industrias enteras en años en vez de décadas.</p>
+        </article>
+
+        <article class="frontera-card">
+          <div class="frontera-icon">◆</div>
+          <h3>Exploración espacial</h3>
+          <p>Cohetes reutilizables y misiones privadas están reduciendo drásticamente el costo de salir de la atmósfera terrestre.</p>
+        </article>
+
+        <article class="frontera-card">
+          <div class="frontera-icon">◆</div>
+          <h3>Biotecnología y edición genética</h3>
+          <p>Herramientas como la edición genética permiten corregir mutaciones causantes de enfermedades a nivel del ADN.</p>
+        </article>
+
+        <article class="frontera-card">
+          <div class="frontera-icon">◆</div>
+          <h3>Energías limpias</h3>
+          <p>La caída en el costo de paneles solares y baterías está acelerando la transición hacia fuentes de energía renovable.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IMPACTO / ESTADÍSTICAS ===== -->
+  <section class="impacto" id="impacto">
+    <div class="section-inner">
+      <p class="section-eyebrow">// EN NÚMEROS</p>
+      <h2 class="section-title">La velocidad del cambio</h2>
+
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-target="5" data-suffix="B+">0</span>
+          <p>personas con acceso a internet en el mundo</p>
         </div>
-        <div class="recurso-item">
-          <h3>Lista de temas difíciles</h3>
-          <p>Anota lo que más te cuesta recordar para priorizarlo en tu próxima sesión.</p>
+        <div class="stat-item">
+          <span class="stat-number" data-target="75" data-suffix=" años">0</span>
+          <p>tardó el teléfono en llegar a mil millones de usuarios</p>
         </div>
-        <div class="recurso-item">
-          <h3>Guía de Pomodoro</h3>
-          <p>Cómo estructurar bloques de 25 minutos sin perder el enfoque a mitad de sesión.</p>
+        <div class="stat-item">
+          <span class="stat-number" data-target="2" data-suffix=" años">0</span>
+          <p>tardó ChatGPT en llegar a cien millones de usuarios</p>
         </div>
       </div>
     </div>
@@ -137,15 +186,15 @@
   <footer class="site-footer" id="contacto">
     <div class="footer-inner">
       <div class="footer-brand">
-        <p class="logo">Aprende<span class="logo-accent">Mejor</span></p>
-        <p>Métodos de estudio explicados de forma simple y aplicable.</p>
+        <p class="logo">EVOLVE<span class="logo-dot">.</span></p>
+        <p>Un recorrido por la tecnología que redefinió a la humanidad.</p>
       </div>
       <div class="footer-contact">
         <h3>Contacto</h3>
-        <p><a href="mailto:hola@aprendemejor.com">hola@aprendemejor.com</a></p>
+        <p><a href="mailto:hola@evolve.com">hola@evolve.com</a></p>
       </div>
     </div>
-    <p class="footer-bottom">© 2026 AprendeMejor. Hecho con dedicación para estudiantes.</p>
+    <p class="footer-bottom">© 2026 EVOLVE. Construido para explorar el futuro.</p>
   </footer>
 
   <script src="js/script.js"></script>
