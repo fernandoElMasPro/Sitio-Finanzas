@@ -16,6 +16,13 @@ if (menuToggle && mainNav) {
       menuToggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+      mainNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 }
 
 // ============================================
@@ -44,7 +51,6 @@ if ('IntersectionObserver' in window && timelineItems.length) {
 
   timelineItems.forEach((item) => revealObserver.observe(item));
 } else {
-  // Fallback: mostrar todo de una vez si no hay soporte
   timelineItems.forEach((item) => item.classList.add('in-view'));
 }
 
