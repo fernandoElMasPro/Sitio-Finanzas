@@ -9,30 +9,44 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  
 </head>
 <body>
 
   <!-- Fondo animado de partículas -->
   <canvas id="particle-canvas"></canvas>
 
+  <!-- Rastro del cursor -->
+  <canvas id="cursor-trail-canvas"></canvas>
+
+  <!-- Barra de progreso de scroll -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
   <!-- ===== HEADER / MENÚ ===== -->
   <header class="site-header" id="header">
     <div class="header-inner">
-      <a href="#inicio" class="logo">FERNANDITO<span class="logo-dot">.</span></a>
+      <a href="#inicio" class="logo">EVOLVE<span class="logo-dot">.</span></a>
 
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
-        <span class="menu-toggle-label">MENU</span>
-        <span class="menu-toggle-icon"><span></span><span></span><span></span></span>
-      </button>
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Cambiar tema claro/oscuro">
+          <span id="theme-icon">☾</span>
+        </button>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+          <span class="menu-toggle-label">MENU</span>
+          <span class="menu-toggle-icon"><span></span><span></span><span></span></span>
+        </button>
+      </div>
     </div>
 
     <nav class="main-nav" id="main-nav">
       <ul>
-        <li><a href="#inicio"> │ Inicio</a></li>
-        <li><a href="#linea-tiempo"> │ Línea de tiempo</a></li>
-        <li><a href="#fronteras"> │ Fronteras</a></li>
-        <li><a href="#impacto"> │ Impacto</a></li>
-        <li><a href="#contacto"> │ Contacto │</a></li>
+        <li><a href="#inicio" class="active"> Inicio</a></li>
+        <li><a href="nosotros.html"> Nosotros</a></li>
+        <li><a href="marco teorico.html"> Marco teórico</a></li>
+        <li><a href="resultado e impacto.html"> Resultado e impacto</a></li>
+        <li><a href="propuestas de cambio.html"> Propuestas de cambio</a></li>
+        <li><a href="#contacto"> Contacto</a></li>
       </ul>
     </nav>
   </header>
@@ -41,7 +55,7 @@
   <section class="hero" id="inicio">
     <div class="hero-grid">
       <div class="hero-inner">
-        <p class="hero-eyebrow"> DE LA RUEDA A LA INTELIGENCIA ARTIFICIAL</p>
+        <p class="hero-eyebrow" id="hero-typewriter"><span id="typewriter-text"></span><span class="typewriter-cursor">▌</span></p>
         <h1 class="hero-title">La historia humana es la historia de <span class="glow-text">sus máquinas</span>.</h1>
         <p class="hero-lead">Explora los avances tecnológicos que redefinieron lo que significa ser humano — cómo nos comunicamos, cómo curamos, cómo viajamos y cómo pensamos.</p>
         <div class="hero-actions">
@@ -63,14 +77,14 @@
             </linearGradient>
           </defs>
 
-          <circle cx="240" cy="240" r="140" fill="url(#coreGlow)"/>
+          <circle class="hero-core-glow" cx="240" cy="240" r="140" fill="url(#coreGlow)"/>
 
           <circle cx="240" cy="240" r="150" fill="none" stroke="url(#ringGrad)" stroke-width="1" opacity="0.5"/>
           <circle class="orbit-ring" cx="240" cy="240" r="190" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.35" stroke-dasharray="4 10"/>
           <circle class="orbit-ring orbit-ring-slow" cx="240" cy="240" r="220" fill="none" stroke="#00F5FF" stroke-width="1" opacity="0.2" stroke-dasharray="2 14"/>
 
           <!-- nodos conectados -->
-          <g stroke="#00F5FF" stroke-width="1" opacity="0.4">
+          <g class="hero-lines" stroke="#00F5FF" stroke-width="1" opacity="0.4">
             <line x1="240" y1="240" x2="120" y2="130"/>
             <line x1="240" y1="240" x2="370" y2="110"/>
             <line x1="240" y1="240" x2="400" y2="290"/>
@@ -98,7 +112,12 @@
   <section class="linea-tiempo" id="linea-tiempo">
     <div class="section-inner">
       <p class="section-eyebrow">// HITOS</p>
-      <h2 class="section-title">Cada avance abrió la puerta al siguiente</h2>
+      <div class="linea-tiempo-header">
+        <h2 class="section-title">Cada avance abrió la puerta al siguiente</h2>
+        <button class="btn btn-ghost btn-presentacion" id="presentation-toggle">
+          <span id="presentation-icon">▶</span> <span id="presentation-label">Modo presentación</span>
+        </button>
+      </div>
 
       <div class="timeline" id="timeline">
         <div class="timeline-line"></div>
@@ -169,7 +188,7 @@
   <!-- ===== FRONTERAS ACTUALES ===== -->
   <section class="fronteras" id="fronteras">
     <div class="section-inner">
-      <p class="section-eyebrow"> AHORA MISMO</p>
+      <p class="section-eyebrow">// AHORA MISMO</p>
       <h2 class="section-title">Las fronteras que se están cruzando hoy</h2>
 
       <div class="fronteras-grid">
@@ -203,7 +222,7 @@
   <!-- ===== IMPACTO / ESTADÍSTICAS ===== -->
   <section class="impacto" id="impacto">
     <div class="section-inner">
-      <p class="section-eyebrow"> EN NÚMEROS</p>
+      <p class="section-eyebrow">// EN NÚMEROS</p>
       <h2 class="section-title">La velocidad del cambio</h2>
 
       <div class="stats-grid">
@@ -238,6 +257,28 @@
     <p class="footer-bottom">© 2026 EVOLVE. Construido para explorar el futuro.</p>
   </footer>
 
+  <!-- ===== MODO PRESENTACIÓN (diapositivas) ===== -->
+  <div class="presentation-overlay" id="presentation-overlay" role="dialog" aria-modal="true" aria-label="Modo presentación">
+    <button class="presentation-close" id="presentation-close" aria-label="Cerrar presentación">✕</button>
+
+    <div class="presentation-slide">
+      <span class="presentation-slide-year" id="slide-year"></span>
+      <h2 class="presentation-slide-title" id="slide-title"></h2>
+      <p class="presentation-slide-summary" id="slide-summary"></p>
+      <p class="presentation-slide-detail" id="slide-detail"></p>
+    </div>
+
+    <div class="presentation-controls">
+      <button class="icon-btn" id="slide-prev" aria-label="Diapositiva anterior">←</button>
+      <div class="presentation-dots" id="presentation-dots"></div>
+      <button class="icon-btn" id="slide-next" aria-label="Siguiente diapositiva">→</button>
+      <button class="icon-btn" id="slide-autoplay" aria-label="Avance automático">▶</button>
+    </div>
+
+    <span class="presentation-counter" id="presentation-counter"></span>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
+  

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Propuestas de cambio — EVOLVE</title>
+
+  <meta
+    name="description"
+    content="Conoce EVOLVE y el propósito de nuestro proyecto sobre los avances tecnológicos de la humanidad."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Fondo animado -->
+  <canvas id="particle-canvas"></canvas>
+  <canvas id="cursor-trail-canvas"></canvas>
+
+  <!-- Barra de progreso -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="header">
+
+    <div class="header-inner">
+
+      <a href="index.html" class="logo">
+        EVOLVE<span class="logo-dot">.</span>
+      </a>
+
+      <div class="header-actions">
+
+        <button
+          class="icon-btn"
+          id="theme-toggle"
+          aria-label="Cambiar tema claro/oscuro"
+        >
+          <span id="theme-icon">☾</span>
+        </button>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span class="menu-toggle-label">MENU</span>
+
+          <span class="menu-toggle-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+
+      </div>
+
+    </div>
+
+    <nav class="main-nav" id="main-nav">
+
+      <ul>
+        <li><a href="index.html"> Inicio</a></li>
+        <li><a href="nosotros.html">  Nosotros </a></li>
+        <li><a href="marco teorico.html"> Marco teórico</a></li>
+        <li><a href="resultado e impacto.html"> Resultado e impacto</a></li>
+        <li><a href="propuestas de cambio.html" class="active"> Propuestas de cambio</a></li>
+        <li> <a href="index.html#contacto"> Contacto</a></li>
+      </ul>
+
+    </nav>
+
+  </header>
+
+
+  <!-- HERO DE LA PÁGINA -->
+  <main>
+
+    <section class="page-hero">
+
+      <div class="page-hero-inner">
+
+        <p class="page-eyebrow">// 01 — INFORMACIÓN</p>
+
+        <h1 class="page-title">
+          Propuestas de cambio<span>.</span>
+        </h1>
+
+        <p class="page-subtitle">
+          <!-- Aquí irá la introducción de la página Propuestas de cambio -->
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTENIDO -->
+    <section class="page-content">
+
+      <div class="page-content-inner">
+
+        <div class="empty-content">
+          <!-- AQUÍ AGREGAREMOS EL CONTENIDO -->
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="logo">
+          EVOLVE<span class="logo-dot">.</span>
+        </a>
+
+        <p>
+          Avances tecnológicos de la humanidad.
+        </p>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <h3>Contacto</h3>
+
+        <a href="mailto:hola@evolve.com">
+          hola@evolve.com
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 EVOLVE. Todos los derechos reservados.</p>
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
