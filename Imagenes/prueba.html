@@ -7,14 +7,16 @@
   <meta name="description" content="Un recorrido interactivo por los hitos tecnológicos que transformaron a la humanidad, desde la rueda hasta la inteligencia artificial.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="prueba.css">
 </head>
 <body>
 
   <!-- Fondo animado de partículas -->
   <canvas id="particle-canvas"></canvas>
+
+  <!-- Piso de cuadrícula en perspectiva (horizonte synthwave) -->
+  <div class="grid-floor" aria-hidden="true"></div>
 
   <!-- Rastro del cursor -->
   <canvas id="cursor-trail-canvas"></canvas>
@@ -25,8 +27,8 @@
   <!-- ===== HEADER / MENÚ ===== -->
   <header class="site-header" id="header">
     <div class="header-inner">
-      
-      <a href="#inicio" class="logo"><img src="Imagenes/logo.png" ><span class="logo-dot">.</span></a>
+      <a href="#inicio" class="logo">EVOLVE<span class="logo-dot">.</span></a>
+
       <div class="header-actions">
         <button class="icon-btn" id="theme-toggle" aria-label="Cambiar tema claro/oscuro">
           <span id="theme-icon">☾</span>
@@ -41,12 +43,11 @@
 
     <nav class="main-nav" id="main-nav">
       <ul>
-        <li><a href="#inicio" class="active"> Inicio</a></li>
-        <li><a href="nosotros.html"> Nosotros</a></li>
-        <li><a href="marco teorico.html"> Marco teórico</a></li>
-        <li><a href="resultado e impacto.html"> Resultado e impacto</a></li>
-        <li><a href="propuestas de cambio.html"> Propuestas de cambio</a></li>
-        <li><a href="#contacto"> Contacto</a></li>
+        <li><a href="#inicio">// Inicio</a></li>
+        <li><a href="#linea-tiempo">// Línea de tiempo</a></li>
+        <li><a href="#fronteras">// Fronteras</a></li>
+        <li><a href="#impacto">// Impacto</a></li>
+        <li><a href="#contacto">// Contacto</a></li>
       </ul>
     </nav>
   </header>
@@ -67,37 +68,35 @@
       <div class="hero-banner" aria-hidden="true">
         <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#00F5FF" stop-opacity="0.55"/>
-              <stop offset="100%" stop-color="#00F5FF" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#00F5FF"/>
-              <stop offset="100%" stop-color="#8B5CF6"/>
+            <linearGradient id="sunGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#FFD23F"/>
+              <stop offset="45%" stop-color="#FF7A3D"/>
+              <stop offset="100%" stop-color="#FF2E9A"/>
             </linearGradient>
+            <radialGradient id="sunHalo" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FF7A3D" stop-opacity="0.45"/>
+              <stop offset="100%" stop-color="#FF7A3D" stop-opacity="0"/>
+            </radialGradient>
+            <clipPath id="sunClip">
+              <circle cx="240" cy="230" r="150"/>
+            </clipPath>
           </defs>
 
-          <circle class="hero-core-glow" cx="240" cy="240" r="140" fill="url(#coreGlow)"/>
+          <circle class="hero-core-glow" cx="240" cy="230" r="190" fill="url(#sunHalo)"/>
 
-          <circle cx="240" cy="240" r="150" fill="none" stroke="url(#ringGrad)" stroke-width="1" opacity="0.5"/>
-          <circle class="orbit-ring" cx="240" cy="240" r="190" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.35" stroke-dasharray="4 10"/>
-          <circle class="orbit-ring orbit-ring-slow" cx="240" cy="240" r="220" fill="none" stroke="#00F5FF" stroke-width="1" opacity="0.2" stroke-dasharray="2 14"/>
+          <!-- disco del sol -->
+          <circle cx="240" cy="230" r="150" fill="url(#sunGrad)"/>
 
-          <!-- nodos conectados -->
-          <g class="hero-lines" stroke="#00F5FF" stroke-width="1" opacity="0.4">
-            <line x1="240" y1="240" x2="120" y2="130"/>
-            <line x1="240" y1="240" x2="370" y2="110"/>
-            <line x1="240" y1="240" x2="400" y2="290"/>
-            <line x1="240" y1="240" x2="300" y2="400"/>
-            <line x1="240" y1="240" x2="100" y2="350"/>
+          <!-- franjas horizontales recortadas dentro del sol -->
+          <g class="hero-lines" clip-path="url(#sunClip)" fill="#1A0B2E">
+            <rect x="90" y="300" width="300" height="10"/>
+            <rect x="90" y="320" width="300" height="14"/>
+            <rect x="90" y="344" width="300" height="18"/>
+            <rect x="90" y="372" width="300" height="24"/>
           </g>
 
-          <circle class="pulse-node" cx="240" cy="240" r="7" fill="#00F5FF"/>
-          <circle cx="120" cy="130" r="4" fill="#00F5FF"/>
-          <circle cx="370" cy="110" r="4" fill="#8B5CF6"/>
-          <circle cx="400" cy="290" r="4" fill="#00F5FF"/>
-          <circle cx="300" cy="400" r="4" fill="#FF3D8A"/>
-          <circle cx="100" cy="350" r="4" fill="#8B5CF6"/>
+          <!-- anillo orbital sutil -->
+          <circle class="orbit-ring" cx="240" cy="230" r="205" fill="none" stroke="#FF2E9A" stroke-width="1" opacity="0.3" stroke-dasharray="3 12"/>
         </svg>
       </div>
     </div>
@@ -244,11 +243,11 @@
 
   <!-- ===== CONTACTO / FOOTER ===== -->
   <footer class="site-footer" id="contacto">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <p class="logo"><img src="Imagenes/logo.png"></p>
-      <p>Un recorrido por la tecnología que redefinió a la humanidad.</p>
-    </div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="logo">EVOLVE<span class="logo-dot">.</span></p>
+        <p>Un recorrido por la tecnología que redefinió a la humanidad.</p>
+      </div>
       <div class="footer-contact">
         <h3>Contacto</h3>
         <p><a href="mailto:hola@evolve.com">hola@evolve.com</a></p>
@@ -278,7 +277,6 @@
     <span class="presentation-counter" id="presentation-counter"></span>
   </div>
 
-  <script src="script.js"></script>
+  <script src="prueba.js"></script>
 </body>
 </html>
-  

@@ -64,15 +64,15 @@ if (nosotrosTypewriterEl) {
 
   const fullTextNosotros = '"Tecnologia y educacion transformando a El salvador"';
 
-  let j = 0;
+  let index = 0;
 
   function typeNosotros() {
 
-    if (j <= fullTextNosotros.length) {
+    if (index <= fullTextNosotros.length) {
 
-      nosotrosTypewriterEl.textContent = fullTextNosotros.slice(0, j);
+      nosotrosTypewriterEl.textContent = fullTextNosotros.slice(0, index);
 
-      j++;
+      index++;
 
       setTimeout(typeNosotros, 45);
     }
