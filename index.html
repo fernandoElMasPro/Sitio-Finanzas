@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EVOLVE — Avances Tecnológicos de la Humanidad</title>
+  <title>SVOLUCIÓN — Avances Tecnológicos de la Humanidad</title>
   <meta name="description" content="Un recorrido interactivo por los hitos tecnológicos que transformaron a la humanidad, desde la rueda hasta la inteligencia artificial.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   
 </head>
@@ -16,7 +17,10 @@
   <!-- Fondo animado de partículas -->
   <canvas id="particle-canvas"></canvas>
 
+  <!-- Piso de cuadrícula en perspectiva (horizonte tecnológico) -->
+  <div class="grid-floor" aria-hidden="true"></div>
   <!-- Rastro del cursor -->
+   
   <canvas id="cursor-trail-canvas"></canvas>
 
   <!-- Barra de progreso de scroll -->
@@ -26,11 +30,10 @@
   <header class="site-header" id="header">
     <div class="header-inner">
       
-      <a href="#inicio" class="logo"><img src="Imagenes/logo.png" ><span class="logo-dot">.</span></a>
+      <a href="#inicio" class="logo">SVOLUCIÓN<img src="Imagenes/icon2-dark.svg" ><span class="logo-dot">.</span></a>
       <div class="header-actions">
-        <button class="icon-btn" id="theme-toggle" aria-label="Cambiar tema claro/oscuro">
-          <span id="theme-icon">☾</span>
-        </button>
+        <button class="icon-button" id="themeToggle"><i class="bi bi-moon-stars"></i></button>
+        
 
         <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
           <span class="menu-toggle-label">MENU</span>
@@ -56,8 +59,8 @@
     <div class="hero-grid">
       <div class="hero-inner">
         <p class="hero-eyebrow" id="hero-typewriter"><span id="typewriter-text"></span><span class="typewriter-cursor">▌</span></p>
-        <h1 class="hero-title">La historia humana es la historia de <span class="glow-text">sus máquinas</span>.</h1>
-        <p class="hero-lead">Explora los avances tecnológicos que redefinieron lo que significa ser humano — cómo nos comunicamos, cómo curamos, cómo viajamos y cómo pensamos.</p>
+        <h1 class="hero-title">El Salvador también escribe su historia en <span class="glow-text">código</span>.</h1>
+        <p class="hero-lead">Explora los avances tecnológicos que están transformando al país más pequeño de Centroamérica — desde la adopción del Bitcoin hasta la nueva generación de talento digital salvadoreño.</p>
         <div class="hero-actions">
           <a href="#linea-tiempo" class="btn btn-primary">Explorar la línea de tiempo</a>
           <a href="#fronteras" class="btn btn-ghost">Ver el futuro</a>
@@ -254,7 +257,7 @@
         <p><a href="mailto:hola@evolve.com">hola@evolve.com</a></p>
       </div>
     </div>
-    <p class="footer-bottom">© 2026 EVOLVE. Construido para explorar el futuro.</p>
+    <p class="footer-bottom">© 2026 SVOLUCIÓN. Construido para explorar el futuro.</p>
   </footer>
 
   <!-- ===== MODO PRESENTACIÓN (diapositivas) ===== -->
