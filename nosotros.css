@@ -1,0 +1,299 @@
+/* =========================================
+   CONTENIDO EXTRA — NOSOTROS
+   No modifica el diseño base del sitio
+   ========================================= */
+
+.nosotros-extra {
+  width: min(1100px, 90%);
+  margin: 70px auto 100px;
+}
+
+/* =========================================
+   BLOQUES PRINCIPALES
+   ========================================= */
+
+.nosotros-bloque {
+  display: grid;
+  grid-template-columns:  1fr;
+  gap: 25px;
+
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+
+  margin-bottom: 20px;
+
+  transition: border-color 0.3s ease,
+              transform 0.3s ease;
+}
+
+.nosotros-bloque:hover {
+  border-color: var(--color-cyan);
+  transform: translateY(-3px);
+}
+
+
+
+
+/* =========================================
+   TÍTULOS
+   ========================================= */
+
+.nosotros-texto h2 {
+  margin: 0 0 15px;
+
+    font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+}
+
+
+/* =========================================
+   PÁRRAFOS
+   ========================================= */
+
+.nosotros-texto p,
+.nosotros-vision p,
+.nosotros-valor p {
+
+  font-family: 'Inherit', sans-serif;
+
+  font-size: 1.15rem;
+  line-height: 1.55;
+
+  opacity: 0.78;
+
+  margin: 0 0 15px;
+}
+
+.nosotros-texto p:last-child,
+.nosotros-vision p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   DOS COLUMNAS
+   ========================================= */
+
+.nosotros-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.nosotros-columnas .nosotros-bloque {
+  margin-bottom: 0;
+  grid-template-columns:  1fr;
+  padding: 30px;
+}
+
+
+/* =========================================
+   VISIÓN
+   ========================================= */
+
+.nosotros-vision {
+  display: grid;
+  grid-template-columns:  1fr;
+  gap: 25px;
+  border-radius: 16px;
+  padding: 45px 35px;
+
+  margin-top: 20px;
+
+  border-left: 2px solid var(--color-cyan);
+
+  background: var(--color-surface);
+}
+
+.nosotros-vision h2 {
+  margin: 5px 0 20px;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+
+/* =========================================
+   VALORES
+   ========================================= */
+
+.nosotros-valores {
+  margin-top: 80px;
+}
+
+.nosotros-valores-titulo {
+  margin-bottom: 30px;
+}
+
+.nosotros-valores-titulo h2 {
+  margin: 10px 0 0;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+}
+
+
+/* =========================================
+   TARJETAS DE VALORES
+   ========================================= */
+
+.nosotros-valores-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.nosotros-valor {
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+
+  transition: border-color 0.3s ease,
+              transform 0.3s ease;
+}
+
+.nosotros-valor:hover {
+  border-color: var(--color-cyan);
+  transform: translateY(-4px);
+}
+
+.nosotros-valor > span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  color: var(--color-cyan);
+  opacity: 0.6;
+}
+
+.nosotros-valor h3 {
+  margin: 20px 0 10px;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-cyan);
+  font-size: 1.2rem;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 850px) {
+
+  .nosotros-columnas {
+    grid-template-columns: 1fr;
+  }
+
+  .nosotros-valores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================
+   MÓVIL
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .nosotros-extra {
+    width: 90%;
+    margin-top: 50px;
+  }
+
+  .nosotros-bloque {
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    padding: 25px;
+  }
+
+  .nosotros-columnas .nosotros-bloque {
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+
+  .nosotros-vision {
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    padding: 30px 25px;
+  }
+
+  .nosotros-vision h2 {
+    font-size: 1.7rem;
+  }
+
+  .nosotros-valores-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+.nosotros-texto h2,
+.nosotros-vision h2,
+.nosotros-valores-titulo h {
+   font-family: 'Orbitron', sans-serif;
+   color: var(--color-cyan);
+}
+
+@media (max-width: 600px) {
+
+  .nosotros-extra {
+    margin: 50px auto 60px;
+  }
+
+  .nosotros-texto h2,
+  .nosotros-valores-titulo h2 {
+    font-size: 1.15rem;
+  }
+
+  .nosotros-vision h2 {
+    font-size: 1.25rem;
+  }
+
+  .nosotros-texto p,
+  .nosotros-vision p {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  .nosotros-bloque {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+
+  .nosotros-valores {
+    margin-top: 20px;
+  }
+
+  .nosotros-valores-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .nosotros-valor {
+    padding: 14px;
+  }
+
+  .nosotros-valor > span {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
+
+  .nosotros-valor h3 {
+    font-size: 0.95rem;
+    margin: 10px 0 6px;
+  }
+
+  .nosotros-valor p {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+}

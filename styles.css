@@ -440,70 +440,12 @@ select {
 
 
 /* =========================================
-   BOTONES ICONO — controles de presentación
-   (usados por ← → ▶ ✕ en el modo presentación)
-   ========================================= */
-
-.icon-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  color: var(--color-text);
-  cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.icon-btn:hover {
-  border-color: var(--color-cyan);
-  color: var(--color-cyan);
-  transform: translateY(-2px);
-}
-
-
-/* =========================================
-   PISO DE CUADRÍCULA (horizonte tecnológico)
-   ========================================= */
-
-.grid-floor {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 42vh;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, transparent 0%, rgba(10, 14, 23, 0.9) 85%),
-    repeating-linear-gradient(90deg, rgba(0, 245, 255, 0.3) 0, rgba(0, 245, 255, 0.3) 1px, transparent 1px, transparent 48px),
-    repeating-linear-gradient(0deg, rgba(0, 245, 255, 0.3) 0, rgba(0, 245, 255, 0.3) 1px, transparent 1px, transparent 48px);
-  background-size: 100% 100%, 100% 100%, 100% 100%;
-  transform: perspective(900px) rotateX(75deg);
-  transform-origin: bottom;
-  opacity: 0.5;
-}
-
-[data-theme="light"] .grid-floor {
-  background:
-    linear-gradient(180deg, transparent 0%, rgba(233, 236, 245, 0.97) 80%),
-    repeating-linear-gradient(90deg, rgba(19, 26, 43, 0.35) 0, rgba(19, 26, 43, 0.35) 1px, transparent 1px, transparent 48px),
-    repeating-linear-gradient(0deg, rgba(19, 26, 43, 0.35) 0, rgba(19, 26, 43, 0.35) 1px, transparent 1px, transparent 48px);
-  opacity: 1;
-}
-
-
-/* =========================================
    MENÚ DESPLEGABLE
    ========================================= */
 
 .main-nav {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 76px;
   left: 0;
   right: 0;
   z-index: 49;
@@ -1652,18 +1594,12 @@ select {
 
 @media (max-width: 860px) {
 
-  .main-nav ul {
-    display: grid;
-
-    grid-template-columns:
-      1fr 1fr;
-
-    gap: 8px;
-
-    padding:
-      20px 32px 25px;
-  }
-
+ .main-nav ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 20px 32px 25px;
+}
   .main-nav a {
     width: 100%;
 
@@ -1755,6 +1691,10 @@ select {
     height: 62px;
   }
 
+  .main-nav {
+    top: 68px;
+  }
+
   .main-nav ul {
     padding:
       18px 20px 22px;
@@ -1844,3 +1784,4 @@ input:focus-visible {
 
   outline-offset: 2px;
 }
+
